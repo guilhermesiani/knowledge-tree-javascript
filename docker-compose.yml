@@ -1,0 +1,10 @@
+version: '3'
+services:
+  node:
+    image: node:12
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/app
+    command: node app.js
