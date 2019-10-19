@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
 });
 
 router.get("/sharks", function(req, res) {
-    res.send(200, '{"some":"2"}');
+    res.send(200, {"some":"5"});
 });
 
 app.use(express.static(path));
