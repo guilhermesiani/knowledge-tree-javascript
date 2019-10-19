@@ -1,10 +1,21 @@
 version: '3'
 services:
   node:
-    image: node:12
-    working_dir: /app
+    build: .
     ports:
-      - "8080:8080"
+      - "3000:3000"
     volumes:
-      - ./app:/app
-    command: node app.js
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongo
+    environment:
+      NODE_ENV: development
+    command: npm start
+  
+  mongo:
+    image: mongo
+    expose:
+      - 27017
+    volumes:
+      - ./data/db:/data/db
