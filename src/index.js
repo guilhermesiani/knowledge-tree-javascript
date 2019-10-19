@@ -12,7 +12,7 @@ router.use(function(req, res, next) {
 });
 
 router.get("/", function(req, res) {
-    res.sendFile(path + "index.html");
+    res.send(200, {"thisIsHome":true});
 });
 
 router.get("/sharks", function(req, res) {
