@@ -5,5 +5,7 @@ Testing my programming knowledge in Javascript/Node
 If need to run with docker-compose:
 
 ```make build```
+
 ```make up```
+
 ```make test```
