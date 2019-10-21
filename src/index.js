@@ -15,8 +15,8 @@ router.get("/", function(req, res) {
     res.send(200, {"thisIsHome":true});
 });
 
-router.get("/sharks", function(req, res) {
-    res.send(200, {"some":"5"});
+router.get("/hello", function(req, res) {
+    res.send(200, {"who":"world"});
 });
 
 app.use(express.static(path));
