@@ -49,4 +49,22 @@ describe('Testing RPG Character', () => {
         expect(armor.receiveDamage).toHaveBeenCalledWith(10);
         expect(armor.receiveDamage).toHaveBeenCalledTimes(1);
     });
+
+    test('Receive damage more then defense shoud lost armor', () => {
+        IronClothe.mockImplementation(() => {
+            return {
+                get defense() {
+                    return 60;
+                },
+                receiveDamage: jest.fn()
+            }
+        });
+        const warrior = new Warrior('Ruth Molin');
+        const armor = new IronClothe;
+        warrior.armor = armor;
+        warrior.receiveDamage(55);
+        expect(warrior.life).toEqual(100);
+        expect(armor.receiveDamage).toHaveBeenCalledWith(1);
+        expect(armor.receiveDamage).toHaveBeenCalledTimes(1);
+    });
 });

@@ -25,6 +25,6 @@ module.exports = class IronClothe {
     }
 
     receiveDamage(damage) {
-        durability -= damage;
+        durability = durability - damage;
     }
 }

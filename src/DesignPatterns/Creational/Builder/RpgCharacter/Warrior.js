@@ -6,6 +6,9 @@ let armor;
 module.exports = class Warrior {
     constructor(nameValue) {
         name = nameValue;
+        life = 100;
+        weapon = undefined;
+        armor = undefined;
     }
 
     get name() {
@@ -33,7 +36,11 @@ module.exports = class Warrior {
 
     receiveDamage(damage) {
         if (armor === undefined) {
-            life -= damage;
+            life = life - damage;
+            return;
+        }
+        if (damage < armor.defense) {
+            armor.receiveDamage(1);
             return;
         }
         damage = damage - armor.defense;
