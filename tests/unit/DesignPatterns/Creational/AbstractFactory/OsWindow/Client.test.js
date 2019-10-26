@@ -8,23 +8,39 @@ jest.mock('../../../../../../src/DesignPatterns/Creational/AbstractFactory/OsWin
 test('Client should create Windows window style', () => {
     WindowsFactory.mockImplementation(() => {
         return {
-            makeButton() {
-                return {
-                    name: 'Windows Button'
-                }
-            },
-            makeMenu() {
-                return {
-                    name: 'Windows Menu'
-                }
-            },
+            makeButton: jest.fn(),
+            makeMenu: jest.fn()
         }
     });
-    const client = new Client(new WindowsFactory);
+    const windowsFactory = new WindowsFactory;
+    windowsFactory.makeButton.mockReturnValueOnce({
+        name: 'Windows Button'
+    });
+    windowsFactory.makeMenu.mockReturnValueOnce({
+        name: 'Windows Menu'
+    });
+    const client = new Client(windowsFactory);
     expect(client.createWindow()).toEqual('Using Windows Menu and Windows Button');
+    expect(windowsFactory.makeButton).toHaveBeenCalledTimes(1);
+    expect(windowsFactory.makeMenu).toHaveBeenCalledTimes(1);
 });
 
-// test('Client should create Linux window style', () => {
-//     const client = new Client(new LinuxFactory);
-//     expect(client.createWindow()).toEqual('Using Linux Menu and Linux Button');
-// });
+test('Client should create Linux window style', () => {
+    LinuxFactory.mockImplementation(() => {
+        return {
+            makeButton: jest.fn(),
+            makeMenu: jest.fn()
+        }
+    });
+    const linuxFactory = new LinuxFactory;
+    linuxFactory.makeButton.mockReturnValueOnce({
+        name: 'Linux Button'
+    });
+    linuxFactory.makeMenu.mockReturnValueOnce({
+        name: 'Linux Menu'
+    });
+    const client = new Client(linuxFactory);
+    expect(client.createWindow()).toEqual('Using Linux Menu and Linux Button');
+    expect(linuxFactory.makeButton).toHaveBeenCalledTimes(1);
+    expect(linuxFactory.makeMenu).toHaveBeenCalledTimes(1);
+});
