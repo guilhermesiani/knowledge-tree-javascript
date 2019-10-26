@@ -13,10 +13,10 @@ test('Client should create Windows window style', () => {
         }
     });
     const windowsFactory = new WindowsFactory;
-    windowsFactory.makeButton.mockReturnValueOnce({
+    windowsFactory.makeButton.mockReturnValue({
         name: 'Windows Button'
     });
-    windowsFactory.makeMenu.mockReturnValueOnce({
+    windowsFactory.makeMenu.mockReturnValue({
         name: 'Windows Menu'
     });
     const client = new Client(windowsFactory);
@@ -33,10 +33,10 @@ test('Client should create Linux window style', () => {
         }
     });
     const linuxFactory = new LinuxFactory;
-    linuxFactory.makeButton.mockReturnValueOnce({
+    linuxFactory.makeButton.mockReturnValue({
         name: 'Linux Button'
     });
-    linuxFactory.makeMenu.mockReturnValueOnce({
+    linuxFactory.makeMenu.mockReturnValue({
         name: 'Linux Menu'
     });
     const client = new Client(linuxFactory);
