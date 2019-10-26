@@ -1,0 +1,1 @@
+module.exports = () => 'Heey, man! What`s up?';
