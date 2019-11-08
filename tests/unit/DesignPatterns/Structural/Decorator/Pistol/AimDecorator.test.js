@@ -16,7 +16,7 @@ test('Pistol aim decorator should shoot', () => {
     expect(pistol.shoot).toHaveBeenCalledTimes(1);
 });
 
-test('Pistol aim with silencer decorator should shoot', () => {
+test('Pistol aim with silencer decorator should shoot', async () => {
     SilencerDecorator.mockImplementation(() => {
         return { shoot: jest.fn() }
     });

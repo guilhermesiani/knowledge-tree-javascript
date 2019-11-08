@@ -2,12 +2,12 @@ const LinuxFactory = require('../../../../../../../src/DesignPatterns/Creational
 const LinuxButton = require('../../../../../../../src/DesignPatterns/Creational/AbstractFactory/OsWindow/Linux/Button');
 const LinuxMenu = require('../../../../../../../src/DesignPatterns/Creational/AbstractFactory/OsWindow/Linux/Menu');
 
-test('Make button should return Linux style', () => {
+test('Make button should return Linux style', async () => {
     const factory = new LinuxFactory;
     expect(factory.makeButton()).toBeInstanceOf(LinuxButton);
 });
 
-test('Make menu should return Linux style', () => {
+test('Make menu should return Linux style', async () => {
     const factory = new LinuxFactory;
     expect(factory.makeMenu()).toBeInstanceOf(LinuxMenu);
 });

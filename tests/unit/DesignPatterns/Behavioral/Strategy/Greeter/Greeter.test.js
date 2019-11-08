@@ -5,7 +5,7 @@ const SocialGreeting = require('../../../../../../src/DesignPatterns/Behavioral/
 jest.mock('../../../../../../src/DesignPatterns/Behavioral/Strategy/Greeter/FriendlyGreeting');
 jest.mock('../../../../../../src/DesignPatterns/Behavioral/Strategy/Greeter/SocialGreeting');
 
-test('Greeting as different types', () => {
+test('Greeting as different types', async () => {
     let greeting = 'Heey, man! What`s up?';
     FriendlyGreeting.mockImplementation(() => {
         return greeting;

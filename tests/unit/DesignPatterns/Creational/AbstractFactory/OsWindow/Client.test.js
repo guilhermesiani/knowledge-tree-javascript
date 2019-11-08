@@ -5,7 +5,7 @@ const LinuxFactory = require('../../../../../../src/DesignPatterns/Creational/Ab
 jest.mock('../../../../../../src/DesignPatterns/Creational/AbstractFactory/OsWindow/Windows/Factory');
 jest.mock('../../../../../../src/DesignPatterns/Creational/AbstractFactory/OsWindow/Linux/Factory');
 
-test('Client should create Windows window style', () => {
+test('Client should create Windows window style', async () => {
     WindowsFactory.mockImplementation(() => {
         return {
             makeButton: jest.fn(),
@@ -25,7 +25,7 @@ test('Client should create Windows window style', () => {
     expect(windowsFactory.makeMenu).toHaveBeenCalledTimes(1);
 });
 
-test('Client should create Linux window style', () => {
+test('Client should create Linux window style', async () => {
     LinuxFactory.mockImplementation(() => {
         return {
             makeButton: jest.fn(),
