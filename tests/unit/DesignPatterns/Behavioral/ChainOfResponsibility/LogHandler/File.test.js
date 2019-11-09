@@ -7,13 +7,13 @@ describe('Log file handler', () => {
     test('should log with file config enable', async () => {
         const logConfigMock = ['file'];
         const logHandler = new File(logConfigMock);
-        expect(logHandler.handle()).toBe('logging to a file');
+        expect(logHandler.handle()).toBe('logging to a file\n');
     });
 
     test('should not log with file config disable', async () => {
         const logConfigMock = ['stdout'];
         const logHandler = new File(logConfigMock);
-        expect(logHandler.handle()).toBeUndefined();
+        expect(logHandler.handle()).toBe('');
     });
 
     test('should handle by other handler based on config', async () => {
@@ -24,11 +24,27 @@ describe('Log file handler', () => {
             }
         });
         const stdoutLogHandler = new Stdout;
-        stdoutLogHandler.handle.mockReturnValue('logging to stdout');
+        stdoutLogHandler.handle.mockReturnValue('logging to stdout\n');
         
         const logConfigMock = ['stdout'];
         const logHandler = new File(logConfigMock, stdoutLogHandler);
-        expect(logHandler.handle()).toBe('logging to stdout');
+        expect(logHandler.handle()).toBe('logging to stdout\n');
+        expect(stdoutLogHandler.handle).toHaveBeenCalledTimes(1);
+    });
+
+    test('should handle file handler and other handler based on config', async () => {
+        // Mock stdout log handler
+        Stdout.mockImplementation(() => {
+            return {
+                handle: jest.fn()
+            }
+        });
+        const stdoutLogHandler = new Stdout;
+        stdoutLogHandler.handle.mockReturnValue('logging to stdout\n');
+        
+        const logConfigMock = ['stdout', 'file'];
+        const logHandler = new File(logConfigMock, stdoutLogHandler);
+        expect(logHandler.handle()).toBe('logging to a file\nlogging to stdout\n');
         expect(stdoutLogHandler.handle).toHaveBeenCalledTimes(1);
     });
 });

@@ -4,12 +4,12 @@ describe('Log some client handler', () => {
     test('should log with some-client config enable', async () => {
         const logConfigMock = ['some-client'];
         const logHandler = new SomeClient(logConfigMock);
-        expect(logHandler.handle()).toBe('logging to some-client');
+        expect(logHandler.handle()).toBe('logging to some-client\n');
     });
 
     test('should not log with some client config disable', async () => {
         const logConfigMock = ['stdout'];
         const logHandler = new SomeClient(logConfigMock);
-        expect(logHandler.handle()).toBeUndefined();
+        expect(logHandler.handle()).toBe('');
     });
 });
