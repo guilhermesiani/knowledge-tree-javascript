@@ -1,10 +1,8 @@
-module.exports = class SomeClient {
-    constructor(conf) {
-        this.conf = conf;
-    }
+const Handler = require('./Handler');
 
+module.exports = class SomeClient extends Handler {
     handle() {
-        if (this.conf.indexOf('some-client') > -1) {
+        if (this.config.indexOf('some-client') > -1) {
             return 'logging to some-client';
         }
         return;
