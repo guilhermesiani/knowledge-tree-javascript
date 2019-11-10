@@ -1,4 +1,4 @@
-const BatmobileAiActivator = require('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/BatmobileAiActivator');
+const BatmobileAiActivator = require('../../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batmobile');
 
 // Mock console.log
 global.console = {
