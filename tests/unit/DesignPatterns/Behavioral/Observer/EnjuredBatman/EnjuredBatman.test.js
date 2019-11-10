@@ -1,11 +1,11 @@
-const EnjuredBatman = require('../../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/EnjuredBatman');
-const Alfred = require('../../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Alfred');
-const Batmobile = require('../../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batmobile');
-const Batcomputer = require('../../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batcomputer');
+const EnjuredBatman = require('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/EnjuredBatman');
+const Alfred = require('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Alfred');
+const Batmobile = require('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batmobile');
+const Batcomputer = require('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batcomputer');
 
-jest.mock('../../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Alfred');
-jest.mock('../../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batmobile');
-jest.mock('../../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batcomputer');
+jest.mock('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Alfred');
+jest.mock('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batmobile');
+jest.mock('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batcomputer');
 
 describe('EnjuredBatman', () => {
     test('should notify observers subscribed', async () => {
