@@ -8,7 +8,7 @@ global.console = {
 }
 
 describe('Printer visitor', () => {
-    test('should sum by color', async () => {
+    test('should sum by color', () => {
         const visitor = new PrinterVisitor;
         const colors = [new Blue, new Red, new Blue, new Blue, new Red];
         colors.map(color => color.accept(visitor));

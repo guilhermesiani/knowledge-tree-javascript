@@ -6,7 +6,7 @@ global.console = {
 }
 
 describe('Batmobile AI Activator', () => {
-    test('should notify', async () => {
+    test('should notify', () => {
         const batmobileAiActivator = new BatmobileAiActivator;
         batmobileAiActivator.notify();
         expect(global.console.log)

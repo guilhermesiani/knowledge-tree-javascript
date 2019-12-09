@@ -6,7 +6,7 @@ global.console = {
 }
 
 describe('Alfred', () => {
-    test('should notify', async () => {
+    test('should notify', () => {
         const alfred = new Alfred;
         alfred.notify();
         expect(global.console.log)

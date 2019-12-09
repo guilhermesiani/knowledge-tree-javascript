@@ -3,7 +3,7 @@ const Blue = require('../../../../../../src/DesignPatterns/Behavioral/Visitor/Co
 const Red = require('../../../../../../src/DesignPatterns/Behavioral/Visitor/Colors/Red');
 
 describe('Counter visitor', () => {
-    test('should sum by color', async () => {
+    test('should sum by color', () => {
         const visitor = new CounterVisitor;
         const colors = [new Blue, new Red, new Blue, new Blue, new Red];
         colors.map(color => color.accept(visitor));

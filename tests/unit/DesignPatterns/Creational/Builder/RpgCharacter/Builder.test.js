@@ -1,7 +1,7 @@
 const Builder = require('../../../../../../src/DesignPatterns/Creational/Builder/RpgCharacter/Builder');
 const Warrior = require('../../../../../../src/DesignPatterns/Creational/Builder/RpgCharacter/Warrior');
 
-test('Test build warrior get instance', async () => {
+test('Test build warrior get instance', () => {
     const warriorName = 'Nabuco Solimon';
 
     const builder = new Builder;
@@ -11,7 +11,7 @@ test('Test build warrior get instance', async () => {
     expect(warrior.name).toEqual(warriorName);
 });
 
-test('Test build warrior with weapon', async () => {
+test('Test build warrior with weapon', () => {
     const warriorName = 'Nabuco Solimon';
 
     const builder = new Builder;
@@ -21,7 +21,7 @@ test('Test build warrior with weapon', async () => {
     expect(warrior.attack()).toEqual('Caused 64 of damage');
 });
 
-test('Test build warrior with armor', async () => {
+test('Test build warrior with armor', () => {
     const warriorName = 'Nabuco Solimon';
 
     const builder = new Builder;

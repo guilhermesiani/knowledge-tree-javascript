@@ -6,7 +6,7 @@ global.console = {
 }
 
 describe('Batcomputer', () => {
-    test('should notify', async () => {
+    test('should notify', () => {
         const batcomputer = new Batcomputer;
         batcomputer.notify();
         expect(global.console.log)

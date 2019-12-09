@@ -4,19 +4,19 @@ const Stdout = require('../../../../../../src/DesignPatterns/Behavioral/ChainOfR
 jest.mock('../../../../../../src/DesignPatterns/Behavioral/ChainOfResponsibility/LogHandler/Stdout');
 
 describe('Log file handler', () => {
-    test('should log with file config enable', async () => {
+    test('should log with file config enable', () => {
         const logConfigMock = ['file'];
         const logHandler = new File(logConfigMock);
         expect(logHandler.handle()).toBe('logging to a file\n');
     });
 
-    test('should not log with file config disable', async () => {
+    test('should not log with file config disable', () => {
         const logConfigMock = ['stdout'];
         const logHandler = new File(logConfigMock);
         expect(logHandler.handle()).toBe('');
     });
 
-    test('should handle by other handler based on config', async () => {
+    test('should handle by other handler based on config', () => {
         // Mock stdout log handler
         Stdout.mockImplementation(() => {
             return {
@@ -32,7 +32,7 @@ describe('Log file handler', () => {
         expect(stdoutLogHandler.handle).toHaveBeenCalledTimes(1);
     });
 
-    test('should handle file handler and other handler based on config', async () => {
+    test('should handle file handler and other handler based on config', () => {
         // Mock stdout log handler
         Stdout.mockImplementation(() => {
             return {

@@ -8,7 +8,7 @@ jest.mock('../../../../../../src/DesignPatterns/Structural/Bridge/DragonBallGuys
 jest.mock('../../../../../../src/DesignPatterns/Structural/Bridge/DragonBallGuys/GokuStyles/SuperSayan2.js');
 
 describe('Goku', () => {
-    test('should attack with kamehame ha in normal style', async () => {
+    test('should attack with kamehame ha in normal style', () => {
         Normal.mockImplementation(() => {
             return {
                 special: jest.fn()
@@ -34,7 +34,7 @@ describe('Goku', () => {
         expect(normalForm.getStrength).toHaveBeenCalledTimes(1);
     });
 
-    test('should attack with super kamehame ha in super sayan style', async () => {
+    test('should attack with super kamehame ha in super sayan style', () => {
         SuperSayan.mockImplementation(() => {
             return {
                 special: jest.fn()
@@ -60,7 +60,7 @@ describe('Goku', () => {
         expect(superSayan.getStrength).toHaveBeenCalledTimes(1);
     });
 
-    test('should attack with genki dama in super sayan style', async () => {
+    test('should attack with genki dama in super sayan style', () => {
         SuperSayan.mockImplementation(() => {
             return {
                 special: jest.fn()

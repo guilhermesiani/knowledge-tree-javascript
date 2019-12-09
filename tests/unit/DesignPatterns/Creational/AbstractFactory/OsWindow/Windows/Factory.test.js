@@ -2,12 +2,12 @@ const WindowsFactory = require('../../../../../../../src/DesignPatterns/Creation
 const WindowsButton = require('../../../../../../../src/DesignPatterns/Creational/AbstractFactory/OsWindow/Windows/Button');
 const WindowsMenu = require('../../../../../../../src/DesignPatterns/Creational/AbstractFactory/OsWindow/Windows/Menu');
 
-test('Make button should return Windows style', async () => {
+test('Make button should return Windows style', () => {
     const factory = new WindowsFactory;
     expect(factory.makeButton()).toBeInstanceOf(WindowsButton);
 });
 
-test('Make menu should return Windows style', async () => {
+test('Make menu should return Windows style', () => {
     const factory = new WindowsFactory;
     expect(factory.makeMenu()).toBeInstanceOf(WindowsMenu);
 });

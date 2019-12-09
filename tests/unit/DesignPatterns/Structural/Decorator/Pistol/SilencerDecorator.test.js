@@ -5,7 +5,7 @@ const AimDecorator = require('../../../../../../src/DesignPatterns/Structural/De
 jest.mock('../../../../../../src/DesignPatterns/Structural/Decorator/Pistol/Pistol');
 jest.mock('../../../../../../src/DesignPatterns/Structural/Decorator/Pistol/AimDecorator');
 
-test('Pistol silencer decorator should shoot', async () => {
+test('Pistol silencer decorator should shoot', () => {
     Pistol.mockImplementation(() => {
         return { shoot: jest.fn() }
     });
@@ -16,7 +16,7 @@ test('Pistol silencer decorator should shoot', async () => {
     expect(pistol.shoot).toHaveBeenCalledTimes(1);
 });
 
-test('Pistol silencer with aim decorator should shoot', async () => {
+test('Pistol silencer with aim decorator should shoot', () => {
     AimDecorator.mockImplementation(() => {
         return { shoot: jest.fn() }
     });

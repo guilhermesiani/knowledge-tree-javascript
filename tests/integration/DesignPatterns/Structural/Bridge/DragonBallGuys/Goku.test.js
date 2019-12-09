@@ -4,7 +4,7 @@ const SuperSayan = require('../../../../../../src/DesignPatterns/Structural/Brid
 const SuperSayan2 = require('../../../../../../src/DesignPatterns/Structural/Bridge/DragonBallGuys/GokuStyles/SuperSayan2');
 
 describe('Goku', () => {
-    test('should attack with kamehame ha in normal style', async () => {
+    test('should attack with kamehame ha in normal style', () => {
         const goku = new Goku(new Normal);
         expect(goku.specialAttack()).toBe('Goku attacking with Kamehame Ha');
     });
@@ -14,7 +14,7 @@ describe('Goku', () => {
         expect(goku.getStrength()).toBe(1000);
     });
 
-    test('should attack with kamehame ha in super sayan style', async () => {
+    test('should attack with kamehame ha in super sayan style', () => {
         const goku = new Goku(new SuperSayan);
         expect(goku.specialAttack()).toBe('Goku attacking with Super Kamehame Ha');
     });
@@ -24,7 +24,7 @@ describe('Goku', () => {
         expect(goku.getStrength()).toBe(300000);
     });
 
-    test('should attack with genki dama in super sayan style', async () => {
+    test('should attack with genki dama in super sayan style', () => {
         const goku = new Goku(new SuperSayan2);
         expect(goku.specialAttack()).toBe('Goku attacking with Genki Dama');
     });

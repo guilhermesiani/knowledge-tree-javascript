@@ -6,17 +6,17 @@ jest.mock('../../../../../../src/DesignPatterns/Creational/Builder/RpgCharacter/
 jest.mock('../../../../../../src/DesignPatterns/Creational/Builder/RpgCharacter/Armors/IronClothe');
 
 describe('Testing RPG Character', () => {
-    test('Given a name should ge same as constructor arg', async () => {
+    test('Given a name should ge same as constructor arg', () => {
         const warrior = new Warrior('Ruth Molin');
         expect(warrior.name).toEqual('Ruth Molin');
     });
 
-    test('Should have 100 of life', async () => {
+    test('Should have 100 of life', () => {
         const warrior = new Warrior('Ruth Molin');
         expect(warrior.life).toEqual(100);
     });
 
-    test('Attack should return damage caused', async () => {
+    test('Attack should return damage caused', () => {
         Sword.mockImplementation(() => {
             return {
                 get damage() {
@@ -30,7 +30,7 @@ describe('Testing RPG Character', () => {
         expect(warrior.attack()).toEqual('Caused 64 of damage');
     });
 
-    test('Receive damage should be protected by armor', async () => {
+    test('Receive damage should be protected by armor', () => {
         IronClothe.mockImplementation(() => {
             return {
                 get defense() {
@@ -50,7 +50,7 @@ describe('Testing RPG Character', () => {
         expect(armor.receiveDamage).toHaveBeenCalledTimes(1);
     });
 
-    test('Receive damage more then defense shoud lost armor', async () => {
+    test('Receive damage more then defense shoud lost armor', () => {
         IronClothe.mockImplementation(() => {
             return {
                 get defense() {

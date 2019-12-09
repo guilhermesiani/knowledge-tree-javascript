@@ -8,7 +8,7 @@ jest.mock('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatma
 jest.mock('../../../../../../src/DesignPatterns/Behavioral/Observer/EnjuredBatman/Observers/Batcomputer');
 
 describe('EnjuredBatman', () => {
-    test('should notify observers subscribed', async () => {
+    test('should notify observers subscribed', () => {
         Alfred.mockImplementation(() => {
             return { notify: jest.fn() };
         });
